@@ -1,8 +1,16 @@
+body {
+	height: 100%;
+	background-color: #eee
+}
+
 .logo {
 	margin: 0;
 	padding: 15px;
 	background-color: #ACD1E9;
 	font-family: Raleway;
+}
+
+.centered {
 	text-align: center;
 }
 
@@ -16,12 +24,13 @@
 }
 
 #description {
-	text-align: center;
 	font-size: 200%;
 	color: #6C7A89;
+	margin: auto 250px;
+	text-align: center;
 }
 
-body {
-	height: 100%;
-	background-color: #eee
+#upload_input {
+	background-color: #3495db;
+	color: white;
 }

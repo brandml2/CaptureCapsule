@@ -3,6 +3,9 @@ var app = express();
 var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
+var schedule = require('node-schedule');
+var nodemailer = require('nodemailer');
+var crypto = require('crypto');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -39,6 +42,46 @@ app.post('/upload', function(req, res){
 
   form.on('field', function(name, value) {
     //this takes all name and value pairs
+    console.log(name, value)
+    var date = new Date(Number(value.substring(0, 4)), Number(value.substring(5, 7))-1, Number(value.substring(8)), 7, 41, 0);
+    //Uses hashing to have a unique ID associated with the person's images
+    var need_hash = name+value+Date.now();
+    var hash = crypto.createHash("sha256");
+    hash = hash.update(need_hash).digest("hex").substring(0, 10);
+    console.log(hash);
+    //Create website with images associated to the hashed number
+
+
+    var j = schedule.scheduleJob(date, function() {
+      //CaptureCapsule2018@gmail.com
+      //CitrusHacks2018
+      //Domain.com password: CitrusHacks2018!
+
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'CaptureCapsule2018@gmail.com',
+          pass: 'CitrusHacks2018'
+        }
+      });
+
+      var mailOptions = {
+        from: 'CaptureCapsule2018@gmail.com',
+        to: name,
+        subject: "It's time to view your CaptureCapsule!",
+        text: "Go to CaptureCapsule.net to view your time capsule or visit CaptureCapsule.net/"+String(hash)
+      };
+
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
+
+      j.cancel()
+    });
   });
 
   // parse the incoming request containing the form data
@@ -46,6 +89,6 @@ app.post('/upload', function(req, res){
 
 });
 
-var server = app.listen(3000, function(){
-  console.log('Server listening on port 3000');
+var server = app.listen(80, function(){
+  console.log('Server listening on port 80');
 });
