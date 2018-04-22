@@ -37,6 +37,10 @@ app.post('/upload', function(req, res){
     res.end('success');
   });
 
+  form.on('field', function(name, value) {
+    //this takes all name and value pairs
+  });
+
   // parse the incoming request containing the form data
   form.parse(req);
 

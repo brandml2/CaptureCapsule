@@ -1,7 +1,27 @@
 .logo {
 	margin: 0;
 	padding: 15px;
-	background-color: #80bfed;
+	background-color: #ACD1E9;
 	font-family: Raleway;
 	text-align: center;
+}
+
+#logo_picture {
+	width: 30%;
+}
+
+#logo_picture_two {
+	width: 15%;
+	padding: 20px;
+}
+
+#description {
+	text-align: center;
+	font-size: 200%;
+	color: #6C7A89;
+}
+
+body {
+	height: 100%;
+	background-color: #eee
 }

@@ -8,24 +8,23 @@
 </head>
 <body>
 	<div class="container-fluid logo">
-		<h1>Capture Capsule</h1>
+		<img id="logo_picture_two" src="/Logo2.png">
+		<img id="logo_picture" src="/Logo.png">
 	</div>
 
 	<div class = "jumbotron">
-		<p>
-		Welcome to CaptureCapsule, an online image time capsule. Just load your image, specify what time u want to be able to retrieve it,
+		<p id="description">
+		Welcome to CaptureCapsule, an online image time capsule. Just upload your image, specify what time you want to be able to retrieve it,
 		and we'll email you a key when you're ready.
 		</p>
 
 	</div>
 
-	<div class="card">
-		<form>
-			<input type="file" name="uploads[]" multiple="multiple">
-			<input type="email" placeholder="Email">
-			<input type="date">
-			<input id="upload-input" type="submit" placeholder="Submit">
-		</form>
+	<div class="input">
+		<input id="file-input" type="file" name="uploads[]" multiple="multiple" action=''>
+		<input id="email-input" type="email" placeholder="Email">
+		<input id="date-input" type="date">
+		<input id="upload-input" type="submit" placeholder="Submit">
 	</div>	
 
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

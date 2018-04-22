@@ -18,6 +18,9 @@
   "homepage": "https://github.com/brandml2/CaptureCapsule#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "formidable": "^1.2.1"
+    "formidable": "^1.2.1",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.6"
   }
 }
