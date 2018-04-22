@@ -1,11 +1,7 @@
-body {
-	height: 100%;
-	background-color: #eee
-}
-
 .logo {
 	margin: 0;
-	padding: 15px;
+	padding: 0;
+	height: 100px;
 	background-color: #ACD1E9;
 	font-family: Raleway;
 }
@@ -15,12 +11,13 @@ body {
 }
 
 #logo_picture {
-	width: 30%;
+	width: auto;
+	height: inherit;
 }
 
 #logo_picture_two {
-	width: 15%;
-	padding: 20px;
+	width: auto;
+	height: inherit;
 }
 
 #description {
@@ -33,4 +30,23 @@ body {
 #upload_input {
 	background-color: #3495db;
 	color: white;
+}
+
+#find_capture_capsule {
+	margin-top: 50px;
+	margin-bottom: 10px;
+	font-size: 200%;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+#find_button {
+	background-color: #3495db;
+	color: white;
+}
+
+#key {
+	width: 30%;
+	height: 30%;
 }

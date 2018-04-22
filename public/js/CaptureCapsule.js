@@ -43,3 +43,18 @@ $('#upload_input').click(function(){
 
 });
 
+/*
+$("#find_button").click(function() {
+  var key = $('#key').val();
+  var mydata = JSON.parse(data);
+  console.log(mydata)
+});
+*/
+
+function findPictures() {
+  $.get('data.json', function(data) {
+    var mydata = JSON.parse(data);
+    var key = $("#key").val();
+    alert(mydata[key]);
+  }, 'text');
+}
